@@ -1,0 +1,3 @@
+# prob1 
+
+this situation reflects the runtime polymorphism. Although the reference type of p1 is Person, but it actually refers to a instance of PersonWithJob. During execution, the java system will invoke the method "equals" of PesonWithJob which check the names and salaries are equal. while the Person only check the names. There is no salary in Person. So the first statement is false. and the second is true.
