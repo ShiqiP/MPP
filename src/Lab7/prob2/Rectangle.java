@@ -8,9 +8,14 @@ public class Rectangle implements Polygon {
 	}
 	
 	@Override
-	public double computePerimeter() {
-		return 2 * length + 2 * width;
-	}
+//	public double computePerimeter() {
+//		double perimeter =  0.0;
+//		double[]  sides  = getSides();
+//		for(double side:sides)
+//			perimeter+=side;
+//			
+//		return perimeter;
+//	}
 	
 	
 	public double getLength() {
@@ -27,6 +32,6 @@ public class Rectangle implements Polygon {
 	}
 	
 	public double[] getSides() {
-		return (new double[]{length, width});
+		return (new double[]{length, width,length, width});
 	}
 }
