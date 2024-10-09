@@ -23,7 +23,7 @@ public class FoodDeliverySystem {
 		double[] orderAmounts = new double[9];
 		Random random = new Random();
 		for(int i=0; i<9; i++) {
-			orderAmounts[i] = random.nextDouble(50,100);
+			orderAmounts[i] = random.nextDouble(50,200);
 		}
 		int i = 0;
 		for(Restaurant r: restaurants) {
