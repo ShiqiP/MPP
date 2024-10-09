@@ -7,7 +7,7 @@ public class Rectangle implements Polygon {
 		this.width = width;
 	}
 	
-	@Override
+//	@Override
 //	public double computePerimeter() {
 //		double perimeter =  0.0;
 //		double[]  sides  = getSides();
