@@ -1,8 +1,7 @@
+
 public interface Polygon extends ClosedCurve{
 	
-	default double[] getSides() {
-		return null;
-	}
+	 double[] getSides(); 
 	
 	default double computePerimeter() {
 		double perimeter =  0.0;
