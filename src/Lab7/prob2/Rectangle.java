@@ -1,4 +1,4 @@
-
+package Lab7.prob2;
 
 public class Rectangle implements Polygon {
 	private double length, width;

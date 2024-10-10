@@ -1,4 +1,4 @@
-
+package Lab7.prob2;
 public class EquilateralTriangle implements Polygon {
 	private double side;
 	

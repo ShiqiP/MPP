@@ -1,4 +1,4 @@
-
+package Lab7.prob2;
 public class Ellipse implements ClosedCurve {
 	private double semiAxis;
 	private double Elateral;
