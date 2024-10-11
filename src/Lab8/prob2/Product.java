@@ -1,4 +1,4 @@
-package prob2;
+package Lab8.prob2;
 
 import java.util.Comparator;
 
