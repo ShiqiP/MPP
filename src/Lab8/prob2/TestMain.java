@@ -3,6 +3,7 @@ package prob2;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 public class TestMain {
@@ -51,41 +52,20 @@ public class TestMain {
 		
 		////////     Solution of (c)   ////////////////
 		
-		System.out.println("Sorting using Price & Title (Using Lambda \"Title First \"): ");
-		Collections.sort(supplies, (e1,e2)->{
-
-			if (e1.getTitle().compareTo(e2.getTitle())== 0)
-			{
-				if(e1.getPrice()<e1.getPrice())
-					return -1;
-				if(e1.getPrice()>e1.getPrice())
-					return 1;
-				return 0;
-			}
-
-			else
-				return e1.getTitle().compareTo(e2.getTitle());		
-		});	
+		
+		System.out.println("Sorting using Price & Title with ONE Comparator (\" By Title \"): ");
+		
+		supplies  = mysort(supplies,SortMethod.BYTITLE);
 		supplies.forEach(x->System.out.println(x.toString()));
 		System.out.println("---------------------");
 		
 		
+		System.out.println("Sorting using Price & Title with ONE Comparator (\" By Price \"): ");
 		
-		System.out.println("Sorting using Price & Title (Using Lambda \"Price First \"): ");
-		Collections.sort(supplies, (e1,e2)->{
-			double tolerance = 0.001;
-			if (Math.abs(e1.getPrice()-e2.getPrice())<tolerance) 
-				return e1.getTitle().compareTo(e2.getTitle());
-
-			else if (e1.getPrice()<e2.getPrice())
-				return -1;
-			else if (e1.getPrice()>e2.getPrice())
-				return 1;
-			else
-				return 0;		
-		});	
+		supplies  = mysort(supplies,SortMethod.BYPRICE);
 		supplies.forEach(x->System.out.println(x.toString()));
 		System.out.println("---------------------");
+		
 		
 		
 		////////      Solution of (d)   ////////////////
@@ -99,12 +79,30 @@ public class TestMain {
 		});	
 		supplies.forEach(x->System.out.println(x.toString()));
 		System.out.println("---------------------");
-		
-		
-		
-		
-		
 	
 		
 	}
+	
+	
+	
+	enum SortMethod {BYPRICE, BYTITLE};
+	
+	public static List<Product> mysort(List<Product> products, SortMethod method) {
+
+		class ProductComparator implements Comparator<Product> {
+			@Override
+			public int compare(Product e1, Product e2) {
+				if(method == SortMethod.BYTITLE) {
+					return e1.getTitle().compareTo(e2.getTitle());
+				} else {
+					if(e1.getPrice() == e2.getPrice()) return 0;
+					else if(e1.getPrice() < e2.getPrice()) return -1;
+					else return 1;
+				}
+			}
+		}
+		Collections.sort(products, new ProductComparator());
+		return products;
+	}
+	
 }
