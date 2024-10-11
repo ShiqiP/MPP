@@ -27,8 +27,8 @@ public class Problem1 {
 		 
 		 // Task 3: Check the inputs of given value is divisible by 5.
 		 List<Integer> inputs = Arrays.asList(10, 21, 12, 25, 33);
-		 Predicate<Integer> isEven = (x)-> x%2==0;
-	        printIf(inputs , isEven);
+		 Predicate<Integer> is5Divisible = (x)-> x%5==0;
+	        printIf(inputs , is5Divisible);
 	}
 
 	public static void changeDouble(List<Integer> numbers , Function<Integer,Integer> getDouble) {
