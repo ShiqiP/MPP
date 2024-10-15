@@ -1,1 +1,3 @@
-The equals method in Employee has been incorrectly overridden. Therefore, when the listsAreEqual method checks the solution, it uses the original Object implementation of equals, which gives incorrect results here. If Override the equal method and pass in the parameter object type arguments than it's solve
+The equals method in Employee has been incorrectly overridden. Therefore, when the listsAreEqual method checks the solution, 
+it uses the original Object implementation of equals, which gives incorrect results here. 
+If Override the equal method and pass in the parameter object type arguments than it's solve
