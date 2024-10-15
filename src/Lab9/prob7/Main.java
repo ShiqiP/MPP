@@ -1,6 +1,7 @@
 package Lab9.prob7;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class Main {
 
@@ -17,12 +18,13 @@ public class Main {
 		
 		//your stream pipeline here
 		System.out.println("/*---Stream Pipline---*/");
-		list.stream()
-			.filter(e->e.getSalary() > 100000)
-			.filter(e->e.getLastName().charAt(0) > 'M')
-			.map(e->e.getFirstName()+" " +e.getLastName())
-			.sorted((e1,e2)->e1.compareTo(e2))
-			.forEach(System.out::println);;
+		String str = list.stream()
+						.filter(e->e.getSalary() > 100000)
+						.filter(e->e.getLastName().charAt(0) > 'M')
+						.map(e->e.getFirstName()+" " +e.getLastName())
+						.sorted((e1,e2)->e1.compareTo(e2))
+						.collect(Collectors.joining(","));
+		System.out.println(str);
 			
 		System.out.println("/*---LambdaLibrary---*/");
 		System.out.println(LambdaLibrary.FILTER_NAME_SALARY.apply(list,'M', 100000));
